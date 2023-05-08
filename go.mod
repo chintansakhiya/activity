@@ -1,4 +1,4 @@
-module github.com/chintansakhiya/first-activity
+module github.com/chintansakhiya/activity
 
 go 1.20
 
