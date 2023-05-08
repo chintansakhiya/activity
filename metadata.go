@@ -37,3 +37,6 @@ func (o *Output) ToMap() map[string]interface{} {
 		"anOutput": o.AnOutput,
 	}
 }
+
+type Activity struct {
+}
