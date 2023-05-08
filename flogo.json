@@ -2,7 +2,7 @@
   "name": "sample-activity",
   "type": "flogo:activity",
   "version": "0.0.1",
-  "ref":"github.com/chintansakhiya/first-activity/activity",
+  "ref":"github.com/chintansakhiya/activity",
   "title": "Sample Activity",
   "description": "Sample Activity",
   "homepage": "https://github.com/chintansakhiya/activity",
