@@ -3,6 +3,7 @@ package activity
 import (
 	"fmt"
 
+	"github.com/chintansakhiya/activity/cmd"
 	"github.com/project-flogo/core/activity"
 	"github.com/project-flogo/core/data/metadata"
 )
@@ -48,8 +49,12 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	}
 
 	ctx.Logger().Debugf("Input: %s", input.AnInput)
-	fmt.Println("fron activity 1", input)
 
+	fmt.Println("fron activity 1", input)
+	err = cmd.Init()
+	if err != nil {
+		return true, err
+	}
 	output := &Output{AnOutput: input.AnInput}
 	err = ctx.SetOutputObject(output)
 	if err != nil {
