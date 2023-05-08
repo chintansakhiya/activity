@@ -15,7 +15,7 @@
   ],
   "input": [
     {
-      "name": "employeeID",
+      "name": "AnInput",
       "type": "string",
       "required": true
     }
