@@ -5,7 +5,7 @@
   "ref":"github.com/chintansakhiya/first-activity/activity",
   "title": "Sample Activity",
   "description": "Sample Activity",
-  "homepage": "https://github.com/chintansakhiya/tree/master/first-activity/activity",
+  "homepage": "https://github.com/chintansakhiya/first-activity/tree/main/activity",
   "settings": [
     {
       "name": "aSetting",
