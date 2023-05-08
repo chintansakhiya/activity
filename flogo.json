@@ -15,15 +15,9 @@
   ],
   "input": [
     {
-      "name": "anInput",
+      "name": "employeeID",
       "type": "string",
       "required": true
-    }
-  ],
-  "output": [
-    {
-      "name": "anOutput",
-      "type": "string"
     }
   ]
 }

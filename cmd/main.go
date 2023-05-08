@@ -7,14 +7,14 @@ import (
 
 func Init() error {
 
-	rootCmd := &cobra.Command{Use: "erp-station"}
-	rootCmd.AddCommand(seedData)
+	rootCmd := &cobra.Command{Use: "isight"}
+	rootCmd.AddCommand(syncData)
 
 	return rootCmd.Execute()
 }
 
-var seedData = &cobra.Command{
-	Use:   "data",
+var syncData = &cobra.Command{
+	Use:   "sync",
 	Short: "add data to sql",
 	Long:  `this command tack data from csv and add to data base`,
 
