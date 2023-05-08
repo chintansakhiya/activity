@@ -1,7 +1,7 @@
 package activity
 
 import (
-	"github.com/chintansakhiya/activity/cmd"
+	"github.com/chintansakhiya/activity/cli"
 	"github.com/project-flogo/core/activity"
 )
 
@@ -28,7 +28,7 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	if err != nil {
 		return true, err
 	}
-	err = cmd.Init()
+	err = cli.Init()
 	if err != nil {
 		return true, err
 	}
