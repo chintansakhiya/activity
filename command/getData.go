@@ -1,7 +1,11 @@
 package command
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 func GetDATA() {
-	fmt.Println("from command")
+	fmt.Println("sync data")
+	log.Fatal("from command")
 }
