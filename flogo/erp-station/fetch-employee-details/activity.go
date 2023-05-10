@@ -46,7 +46,7 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	}
 
 	ctx.Logger().Debugf("Input: %s", input.AnInput)
-	fmt.Println("fron activity 123456", input)
+	fmt.Println("fron activity chintan", input)
 
 	output := &Output{AnOutput: input.AnInput}
 	err = ctx.SetOutputObject(output)
