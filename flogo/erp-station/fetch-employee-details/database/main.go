@@ -2,6 +2,7 @@ package database
 
 import (
 	"database/sql"
+	"strconv"
 
 	"github.com/doug-martin/goqu/v9"
 )
@@ -11,11 +12,17 @@ var dbURL string
 var err error
 
 const (
-	POSTGRES = "postgres"
+	POSTGRES    = "postgres"
+	Username    = "isight"
+	Password    = "isight"
+	Host        = "localhost"
+	Port        = 5432
+	Db          = "isight"
+	QueryString = "="
 )
 
 func PostgresDBConnection() (*goqu.Database, error) {
-	dbURL = "postgres://isight:isight@localhost:5432/isight?sslmode=disable"
+	dbURL = "postgres://" + Username + ":" + Password + "@" + Host + ":" + strconv.Itoa(Port) + "/" + Db + "?" + QueryString
 	if db == nil {
 		db, err = sql.Open(POSTGRES, dbURL)
 		if err != nil {
