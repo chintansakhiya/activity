@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/Improwised/isight/tree/fetch-employee-details/flogo/erp-station/fetch-employee-details/config"
-	"github.com/Improwised/isight/tree/fetch-employee-details/flogo/erp-station/fetch-employee-details/database"
-	"github.com/Improwised/isight/tree/fetch-employee-details/flogo/erp-station/fetch-employee-details/pkg/erpnext"
+	"github.com/chintansakhiya/activity/config"
+	"github.com/chintansakhiya/activity/database"
+	"github.com/chintansakhiya/activity/pkg/erpnext"
 	"github.com/project-flogo/core/activity"
 )
 

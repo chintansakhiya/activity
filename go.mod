@@ -1,4 +1,4 @@
-module github.com/Improwised/isight/tree/fetch-employee-details/flogo/erp-station/fetch-employee-details
+module github.com/chintansakhiya/activity
 
 go 1.20
 
