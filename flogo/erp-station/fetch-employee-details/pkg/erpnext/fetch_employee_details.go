@@ -35,7 +35,7 @@ func GetDetails(db *goqu.Database, id string) error {
 	if err != nil {
 		return err
 	}
-
+	fmt.Println(employeeDetails.Data)
 	sql, _, err := db.Insert("employee").Rows(
 		goqu.Record{
 			"id":             employeeDetails.Data.ID,
@@ -53,7 +53,7 @@ func GetDetails(db *goqu.Database, id string) error {
 		"relieving_date": employeeDetails.Data.RelievingDate,
 		"status":         employeeDetails.Data.Status,
 	})).ToSQL()
-	fmt.Println(sql)
+	fmt.Println("sql:", sql)
 	if err != nil {
 		return err
 
