@@ -1,6 +1,5 @@
 package fetchemployee
  
-
 import "github.com/project-flogo/core/data/coerce"
 
 type Settings struct {

@@ -5,7 +5,7 @@
   "ref":"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details",
   "title": "employee data",
   "description": "fetch employee data from erp-station",
-  "homepage": "github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details",
+  "homepage": "https://github.com/chintansakhiya/activity/tree/main/flogo/erp-station/fetch-employee-details",
   "settings": [
     {
     }
@@ -15,6 +15,12 @@
       "name": "anInput",
       "type": "string",
       "required": true
+    }
+  ],
+  "output": [
+    {
+      "name": "anOutput",
+      "type": "string"
     }
   ]
 }
