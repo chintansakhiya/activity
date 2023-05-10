@@ -12,9 +12,15 @@
   ],
   "input": [
     {
-      "name": "employeeId",
+      "name": "anInput",
       "type": "string",
       "required": true
+    }
+  ],
+  "output": [
+    {
+      "name": "anOutput",
+      "type": "string"
     }
   ]
 }
