@@ -1,8 +1,10 @@
 package fetchemployee
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
+	"strings"
 
 	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/database"
 	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/pkg/erpnext"
@@ -39,20 +41,29 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	// cfg := config.GetConfig()
 
 	db, err := database.PostgresDBConnection()
-	// if err != nil {
-	// 	return false, err
-	// }
-	// var id EmployeeID
+	if err != nil {
+		return false, err
+	}
+	var id erpnext.EmployeeID
+	temp := strings.Replace(input.EmployeeId, `":""}`, "", -5)
+	temp = strings.Replace(temp, `{"`, "", -2)
+	temp = strings.Replace(temp, `\`, "", -1)
+
+	err = json.Unmarshal([]byte(temp), &id)
+	if err != nil {
+		fmt.Println(err)
+	}
+
 	// err = json.Unmarshal([]byte(input.EmployeeId), &id)
 	// if err != nil {
 	// 	return false, err
 	// }
-	if err!=nil {
+	if err != nil {
 		log.Fatal(err)
-		
+
 	}
 
-	err = erpnext.GetDetails(db, "HR-EMP-00037")
+	err = erpnext.GetDetails(db, id.EmployeeID)
 	if err != nil {
 		return false, err
 	}
