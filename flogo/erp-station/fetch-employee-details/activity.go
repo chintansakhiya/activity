@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/config"
-	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/database"
 	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/pkg/erpnext"
 	"github.com/project-flogo/core/activity"
 )
@@ -57,19 +55,19 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	// if err != nil {
 	// 	return true, err
 	// }
-	cfg := config.GetConfig()
+	// cfg := config.GetConfig()
 
-	db, _ := database.PostgresDBConnection(cfg)
-	if err != nil {
-		return false, err
-	}
+	// db, _ := database.PostgresDBConnection(cfg)
+	// if err != nil {
+	// 	return false, err
+	// }
 	var id erpnext.EmployeeID
 	err = json.Unmarshal([]byte(input.EmployeeId), &id)
 	if err != nil {
 		return false, err
 	}
 	log.Fatal(id)
-	err = erpnext.GetDetails(db, id.EmployeeID)
+	// err = erpnext.GetDetails(db, id.EmployeeID)
 	if err != nil {
 		return false, err
 	}
