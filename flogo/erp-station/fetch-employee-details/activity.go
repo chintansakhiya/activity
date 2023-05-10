@@ -59,7 +59,7 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	// }
 	cfg := config.GetConfig()
 
-	db, err := database.PostgresDBConnection(cfg)
+	db, _ := database.PostgresDBConnection(cfg)
 	if err != nil {
 		return false, err
 	}
