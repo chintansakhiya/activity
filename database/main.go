@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"strconv"
 
-	"github.com/chintansakhiya/activity/flogo/erp-station/config"
+	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/config"
 	"github.com/doug-martin/goqu/v9"
 )
 
