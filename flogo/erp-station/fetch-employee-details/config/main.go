@@ -1,6 +1,7 @@
 package config
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/joho/godotenv"
@@ -11,9 +12,17 @@ var AllConfig DBConfig
 
 // GetConfig Collects all configs
 func GetConfig() DBConfig {
-	err := godotenv.Load()
+	err := godotenv.Load("../.env")
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err, "1")
+	}
+	err = godotenv.Load("./.env")
+	if err != nil {
+		fmt.Println(err, "2")
+	}
+	err = godotenv.Load(".env")
+	if err != nil {
+		fmt.Println(err, "3")
 	}
 
 	AllConfig = DBConfig{}
