@@ -1,13 +1,9 @@
 package fetchemployee
 
 import (
-	"encoding/json"
 	"fmt"
 	"log"
 
-	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/config"
-	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/database"
-	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/pkg/erpnext"
 	"github.com/project-flogo/core/activity"
 )
 
@@ -30,20 +26,20 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 		return false, err
 	}
 	fmt.Println(input)
-	cfg := config.GetConfig()
+	// cfg := config.GetConfig()
 
-	db, err := database.PostgresDBConnection(cfg)
-	if err != nil {
-		return false, err
-	}
-	var id erpnext.EmployeeID
-	err = json.Unmarshal([]byte(input.employeeId), &id)
-	if err != nil {
-		return false, err
-	}
-	err = erpnext.GetDetails(db, id.EmployeeID)
-	if err != nil {
-		return false, err
-	}
+	// db, err := database.PostgresDBConnection(cfg)
+	// if err != nil {
+	// 	return false, err
+	// }
+	// var id erpnext.EmployeeID
+	// err = json.Unmarshal([]byte(input.employeeId), &id)
+	// if err != nil {
+	// 	return false, err
+	// }
+	// err = erpnext.GetDetails(db, id.EmployeeID)
+	// if err != nil {
+	// 	return false, err
+	// }
 	return true, nil
 }
