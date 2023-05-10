@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "title": "employee data",
   "description": "fetch employee data from erp-station",
-  "homepage": "https://github.com/chintansakhiya/activity/tree/main/flogo/erp-station/fetch-employee-details",
+  "homepage": "https://github.com/project-flogo/tree/master/examples/activity",
   "settings": [
     {
     }
