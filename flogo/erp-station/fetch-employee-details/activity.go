@@ -2,9 +2,9 @@ package fetchemployee
 
 import (
 	"fmt"
-	"log"
 
-	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/config"
+	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/database"
+	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/pkg/erpnext"
 	"github.com/project-flogo/core/activity"
 )
 
@@ -13,13 +13,6 @@ func init() {
 }
 
 var activityMd = activity.ToMetadata(&Settings{}, &Input{}, &Output{})
-
-type EmployeeID struct {
-	EmployeeID EmployeeIDs `json:"name"`
-}
-type EmployeeIDs struct {
-	Emp string `json:""`
-}
 
 func (a *Activity) Metadata() *activity.Metadata {
 	return activityMd
@@ -42,9 +35,9 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	// if err != nil {
 	// 	return true, err
 	// }
-	cfg := config.GetConfig()
+	// cfg := config.GetConfig()
 
-	// db, _ := database.PostgresDBConnection(cfg)
+	db, _ := database.PostgresDBConnection()
 	// if err != nil {
 	// 	return false, err
 	// }
@@ -53,8 +46,8 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	// if err != nil {
 	// 	return false, err
 	// }
-	log.Fatal(cfg)
-	// err = erpnext.GetDetails(db, id.EmployeeID)
+
+	err = erpnext.GetDetails(db, "HR-EMP-00037")
 	if err != nil {
 		return false, err
 	}

@@ -2,9 +2,7 @@ package database
 
 import (
 	"database/sql"
-	"strconv"
 
-	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/config"
 	"github.com/doug-martin/goqu/v9"
 )
 
@@ -16,8 +14,8 @@ const (
 	POSTGRES = "postgres"
 )
 
-func PostgresDBConnection(cfg config.DBConfig) (*goqu.Database, error) {
-	dbURL = "postgres://" + cfg.Username + ":" + cfg.Password + "@" + cfg.Host + ":" + strconv.Itoa(cfg.Port) + "/" + cfg.Db + "?" + cfg.QueryString
+func PostgresDBConnection() (*goqu.Database, error) {
+	dbURL = "postgres://isight:isight@localhost:5432/isight?sslmode=disable"
 	if db == nil {
 		db, err = sql.Open(POSTGRES, dbURL)
 		if err != nil {
