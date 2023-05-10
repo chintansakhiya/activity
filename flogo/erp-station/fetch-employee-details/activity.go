@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/pkg/erpnext"
 	"github.com/project-flogo/core/activity"
 )
 
@@ -15,25 +14,13 @@ func init() {
 
 var activityMd = activity.ToMetadata(&Settings{}, &Input{}, &Output{})
 
-// New optional factory method, should be used if one activity instance per configuration is desired
-// func New(ctx activity.InitContext) (activity.Activity, error) {
+type EmployeeID struct {
+	EmployeeID EmployeeIDs `json:"name"`
+}
+type EmployeeIDs struct {
+	Emp string `json:""`
+}
 
-// 	s := &Settings{}
-// 	err := metadata.MapToStruct(ctx.Settings(), s, true)
-// 	if err != nil {
-// 		return nil, err
-// 	}
-
-// 	ctx.Logger().Debugf("Setting: %s", s.ASetting)
-
-// 	act := &Activity{} //add aSetting to instance
-
-// 	return act, nil
-// }
-
-// Activity is an sample Activity that can be used as a base to create a custom activity
-
-// Metadata returns the activity's metadata
 func (a *Activity) Metadata() *activity.Metadata {
 	return activityMd
 }
@@ -48,7 +35,7 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	}
 
 	ctx.Logger().Debugf("Input: %s", input.EmployeeId)
-	fmt.Println("fron activity chintan", input)
+	fmt.Println("fron activity chintan", input.EmployeeId)
 
 	// output := &Output{AnOutput: input.EmployeeId}
 	// err = ctx.SetOutputObject(output)
@@ -61,7 +48,7 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	// if err != nil {
 	// 	return false, err
 	// }
-	var id erpnext.EmployeeID
+	var id EmployeeID
 	err = json.Unmarshal([]byte(input.EmployeeId), &id)
 	if err != nil {
 		return false, err
