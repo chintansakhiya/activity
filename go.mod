@@ -1,4 +1,4 @@
-module github.com/chintansakhiya/activity
+module github.com/chintansakhiya/activity/flogo/erp-station
 
 go 1.20
 

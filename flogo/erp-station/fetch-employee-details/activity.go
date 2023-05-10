@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/chintansakhiya/activity/config"
-	"github.com/chintansakhiya/activity/database"
-	"github.com/chintansakhiya/activity/pkg/erpnext"
+	"github.com/chintansakhiya/activity/flogo/erp-station/config"
+	"github.com/chintansakhiya/activity/flogo/erp-station/database"
+	"github.com/chintansakhiya/activity/flogo/erp-station/pkg/erpnext"
 	"github.com/project-flogo/core/activity"
 )
 
