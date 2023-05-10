@@ -20,7 +20,7 @@ const (
 	Host        = "localhost"
 	Port        = 5432
 	Db          = "isight"
-	QueryString = "="
+	QueryString = "sslmode=disable"
 )
 
 func PostgresDBConnection() (*goqu.Database, error) {
