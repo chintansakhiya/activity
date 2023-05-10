@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 
 	"github.com/doug-martin/goqu/v9"
@@ -54,7 +53,7 @@ func GetDetails(db *goqu.Database, id string) error {
 		"relieving_date": employeeDetails.Data.RelievingDate,
 		"status":         employeeDetails.Data.Status,
 	})).ToSQL()
-	log.Fatal("sql:", sql)
+
 	if err != nil {
 		return err
 

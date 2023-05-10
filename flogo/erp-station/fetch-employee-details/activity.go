@@ -2,6 +2,7 @@ package fetchemployee
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/database"
 	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/pkg/erpnext"
@@ -37,7 +38,7 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	// }
 	// cfg := config.GetConfig()
 
-	db, _ := database.PostgresDBConnection()
+	db, err := database.PostgresDBConnection()
 	// if err != nil {
 	// 	return false, err
 	// }
@@ -46,6 +47,10 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	// if err != nil {
 	// 	return false, err
 	// }
+	if err!=nil {
+		log.Fatal(err)
+		
+	}
 
 	err = erpnext.GetDetails(db, "HR-EMP-00037")
 	if err != nil {
