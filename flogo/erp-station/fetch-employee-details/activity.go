@@ -1,7 +1,6 @@
 package fetchemployee
 
 import (
-	"errors"
 	"fmt"
 	"log"
 
@@ -23,7 +22,7 @@ func (a *Activity) Metadata() *activity.Metadata {
 func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	input := &Input{}
 	err = ctx.GetInputObject(input)
-	err=errors.New("input")
+
 	if err != nil {
 		return false, err
 	}
