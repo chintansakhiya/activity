@@ -10,11 +10,12 @@ import (
 )
 
 func GetDetails(db *goqu.Database,id string) error {
-
+	fmt.Println("1")
 	req, err := http.NewRequest("GET", fmt.Sprintf("http://10.0.8.190:8090/api/resource/Employee/%s", id), nil)
 	if err != nil {
 		return err
 	}
+	fmt.Println("2")
 	req.Header.Set("Authorization", "token 472e6bdd5f355a2:a5b7f758c8cfbf0")
 
 	client := &http.Client{}
@@ -22,18 +23,20 @@ func GetDetails(db *goqu.Database,id string) error {
 	if err != nil {
 		return err
 	}
+	fmt.Println("3")
 
 	defer response.Body.Close()
 	detail, err := io.ReadAll(response.Body)
 	if err != nil {
 		return err
 	}
-
+	fmt.Println("4")
 	var employeeDetails EmployeeDetailsList
 	err = json.Unmarshal(detail, &employeeDetails)
 	if err != nil {
 		return err
 	}
+	fmt.Println("5")
 	sql, _, err := db.Insert("employee").Rows(
 		goqu.Record{
 			"id":             employeeDetails.Data.ID,
@@ -61,6 +64,7 @@ func GetDetails(db *goqu.Database,id string) error {
 	if err != nil {
 		return err
 	}
+	fmt.Println("6")
 
 	return nil
 }
