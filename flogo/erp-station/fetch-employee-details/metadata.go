@@ -7,18 +7,18 @@ type Settings struct {
 }
 
 type Input struct {
-	AnInput string `md:"anInput,required"`
+	EmployeeId string `md:"employeeId,required"`
 }
 
 func (r *Input) FromMap(values map[string]interface{}) error {
-	strVal, _ := coerce.ToString(values["anInput"])
-	r.AnInput = strVal
+	strVal, _ := coerce.ToString(values["employeeId"])
+	r.EmployeeId = strVal
 	return nil
 }
 
 func (r *Input) ToMap() map[string]interface{} {
 	return map[string]interface{}{
-		"anInput": r.AnInput,
+		"employeeId": r.EmployeeId,
 	}
 }
 

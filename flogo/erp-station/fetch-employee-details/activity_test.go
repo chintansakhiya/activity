@@ -17,7 +17,7 @@ func TestRegister(t *testing.T) {
 func TestEval(t *testing.T) {
 	act := &Activity{}
 	tc := test.NewActivityContext(act.Metadata())
-	input := &Input{employeeId: "test"}
+	input := &Input{EmployeeId: "test"}
 	err := tc.SetInputObject(input)
 	assert.Nil(t, err)
 	done, err := act.Eval(tc)

@@ -12,7 +12,7 @@
   ],
   "input": [
     {
-      "name": "anInput",
+      "name": "employeeId",
       "type": "string",
       "required": true
     }
