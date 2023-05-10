@@ -2,7 +2,6 @@
   "name": "get-employee-data",
   "type": "flogo:activity",
   "version": "0.0.1",
-  "ref":"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details",
   "title": "employee data",
   "description": "fetch employee data from erp-station",
   "homepage": "https://github.com/chintansakhiya/activity/tree/main/flogo/erp-station/fetch-employee-details",

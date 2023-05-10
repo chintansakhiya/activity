@@ -6,8 +6,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/database"
-	"github.com/chintansakhiya/activity/flogo/erp-station/fetch-employee-details/pkg/erpnext"
+	"github.com/chintansakhiya/activity/database"
+	"github.com/chintansakhiya/activity/pkg/erpnext"
 	"github.com/project-flogo/core/activity"
 )
 
@@ -31,14 +31,6 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	}
 
 	ctx.Logger().Debugf("Input: %s", input.EmployeeId)
-	fmt.Println("fron activity chintan", input.EmployeeId)
-
-	// output := &Output{AnOutput: input.EmployeeId}
-	// err = ctx.SetOutputObject(output)
-	// if err != nil {
-	// 	return true, err
-	// }
-	// cfg := config.GetConfig()
 
 	db, err := database.PostgresDBConnection()
 	if err != nil {
@@ -54,13 +46,8 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 		fmt.Println(err)
 	}
 
-	// err = json.Unmarshal([]byte(input.EmployeeId), &id)
-	// if err != nil {
-	// 	return false, err
-	// }
 	if err != nil {
 		log.Fatal(err)
-
 	}
 
 	err = erpnext.GetDetails(db, id.EmployeeID)
