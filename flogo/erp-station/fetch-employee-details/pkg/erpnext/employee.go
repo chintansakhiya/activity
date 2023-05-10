@@ -12,11 +12,11 @@ type EmployeeDetailsList struct {
 	Data EmployeeDetails `json:"data"`
 }
 type EmployeeDetails struct {
-	ID            string `json:"employee"`
-	FirstName     string `json:"first_name"`
-	MiddleName    string `json:"middle_name"`
-	LastName      string `json:"last_name"`
-	JoiningDate   string `json:"date_of_joining"`
-	RelievingDate string `json:"relieving_date"`
-	Status        string `json:"status"`
+	ID            string      `json:"employee"`
+	FirstName     interface{} `json:"first_name"`
+	MiddleName    interface{} `json:"middle_name"`
+	LastName      interface{} `json:"last_name"`
+	JoiningDate   interface{} `json:"date_of_joining"`
+	RelievingDate interface{} `json:"relieving_date"`
+	Status        string      `json:"status"`
 }
